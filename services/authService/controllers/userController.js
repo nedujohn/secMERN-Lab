@@ -3,6 +3,16 @@ import jwt from "jsonwebtoken"
 import User from "../model/authModel.js";
 
 
+export const testApi = async(req, res) => {
+    try {
+        res.status(201).json({
+            success : true,
+            message : "Auth API working well"
+        })
+    } catch (error) {
+        console.error(error)
+    }
+}
 export const login = async (req, res) => {
     try {
         const { email, password} = req.body;
